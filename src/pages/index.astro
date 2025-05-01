@@ -1,12 +1,18 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../web/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Main">
+    <script src="/src/scripts/global.ts"></script>
+
     <div class="mb-3 d-flex justify-content-center gap-2">
         <button class="btn btn-primary">Mi primer botón</button>
         <button class="btn btn-outline-primary">Mi primer botón</button>
     </div>
 
     Bienvenido a mi página de prueba
+    <div class="container m-5 w-100">
+        Lista de usuarios
+        <div id="list-users"></div>
+    </div>
 </BaseLayout>
