@@ -1,0 +1,36 @@
+---
+import { ClientRouter } from "astro:transitions";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/bootstrap-custom.scss";
+import Header from "../components/header/Header.astro";
+import Navigation from "../components/Navigation/Navigation.astro";
+
+interface Props {
+    title: string;
+}
+
+const {title} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" data-bs-theme="light"> <!--Se puede seleccionar el tema-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Prueba de concepto</title>
+    <ClientRouter />
+</head>
+<body>
+    <Header/>
+    <main>
+        <Navigation/>
+        <div class="p-4">
+            <slot/>
+        </div>
+    </main>
+</body>
+</html>
